@@ -8,7 +8,6 @@
     "authors": [
         {
             "name": "GetMyInvoices SDK Team",
-            "email": "support@getmyinvoices.com",
             "homepage": "https://api.getmyinvoices.com/accounts/v2/doc/",
             "role": "Developer"
         }
@@ -28,6 +27,6 @@
     "require-dev": {
         "phpunit/phpunit": "^4.8",
         "justinrainbow/json-schema": "^5.2",
-		"phpdocumentor/phpdocumentor": "^2.9.0"
+        "phpdocumentor/phpdocumentor": "^2.9.0"
     }
 }
