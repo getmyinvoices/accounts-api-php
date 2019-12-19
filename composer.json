@@ -21,7 +21,7 @@
         "ext-json": "*"
     },
     "autoload": {
-        "classmap": ["src/", "tests/"],
+        "classmap": ["src/"],
         "exclude-from-classmap": []
     },
     "require-dev": {
