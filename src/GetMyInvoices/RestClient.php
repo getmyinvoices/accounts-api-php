@@ -215,6 +215,19 @@ class RestClient
 		
 		return $this->post($param,$method);
 	}
+
+	/**
+	 * Method deleteDocument
+	Delete one document from the account.
+	 * @param $param
+	 * @return mixed|string
+*/
+	public function deleteDocument($param)
+	{
+		$method ='deleteDocument';
+		
+		return $this->post($param,$method);
+	}
 	
 	/**
 	 * Method getCountries
