@@ -19,9 +19,9 @@ $param = array();
 api_key required (string)
 API key of account
 */
-$param['api_key'] = GETMYINVOICES_ACCOUNTS_API_KEY;
+$api_key = GETMYINVOICES_ACCOUNTS_API_KEY;
 
 $gmi = new RestClient();
 $gmi->setSslverify(false);
-$response = $gmi->getCurrencies($param);
+$response = $gmi->getCurrencies($api_key, $param);
 print_r($response);

@@ -7,21 +7,19 @@ require_once '../vendor/autoload.php';
 
 require_once 'inc/config.php';
 
-//Check API status.
+// Check API status.
 
 //parameters
-
-$param = array();
 
 /*
 *param
 api_key: required (string)
 API key of account
 */
-$param['api_key'] = GETMYINVOICES_ACCOUNTS_API_KEY;
+$api_key = GETMYINVOICES_ACCOUNTS_API_KEY;
 
 $gmi = new RestClient();
-$gmi->setApiVersion('v2');
+$gmi->setApiVersion('v3');
 $gmi->setSslverify(false);
-$response = $gmi->getApiStatus($param);
+$response = $gmi->getApiStatus($api_key);
 print_r($response);

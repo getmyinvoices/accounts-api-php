@@ -17,16 +17,16 @@ $param = array();
 *param  document_prim_uid required (integer)
 *prim_uid of the document.
 */
-$param['document_prim_uid'] = 740040;
+$param['documentUid'] = 31623;
 
 /*
 *param
 api_key required (string)
 API key of account
 */
-$param['api_key'] = GETMYINVOICES_ACCOUNTS_API_KEY;
+$api_key = GETMYINVOICES_ACCOUNTS_API_KEY;
 
 $gmi = new RestClient();
 $gmi->setSslverify(false);
-$response = $gmi->deleteDocument($param);
+$response = $gmi->deleteDocument($api_key, $param);
 print_r($response);

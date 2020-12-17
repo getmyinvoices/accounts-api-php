@@ -9,109 +9,108 @@ require_once 'inc/config.php';
 
 // Add new custom company.
 
-
 //parameters
 
 $param = array();
 
 /*
-*param company_name required (string)
+*param name required (string)
 *Name of the company.
 */
-$param['company_name'] = 'Server4You';
+$param['name'] = 'Server4You';
 
 /*
-*param company_country required (integer)
+*param country required (integer)
 *PRIM_UID of the country.
 */
-$param['company_country'] = '73';
+$param['countryUid'] = '73';
 
 /*
-*param company_tags optional (string)
+*param tags optional (array)
 *Tags (Comma separated tags)
 */
-$param['company_tags'] = 'Hosting, Software';
+$param['tags'] = ['Hosting', 'Software'];
 
 /*
-*param company_street optional (string)
+*param street optional (string)
 *Street
 */
-$param['company_street'] = 'Musterring 1';
+$param['street'] = 'Musterring 1';
 
 /*
-*param company_zip optional (string)
+*param zip optional (string)
 *ZIP code
 */
-$param['company_zip'] = '12456';
+$param['zip'] = '12456';
 
 /*
-*param company_city optional (string)
+*param city optional (string)
 *City
 */
-$param['company_city'] = 'Musterhausen';
+$param['city'] = 'Musterhausen';
 
 /*
-*param company_email optional (string)
+*param email optional (string)
 *Email
 */
-$param['company_email'] = 'email@example.com';
+$param['email'] = 'email@example.com';
 
 /*
-*param company_phone optional (string)
+*param phone optional (string)
 *Phone
 */
-$param['company_phone'] = '123456789';
+$param['phone'] = '123456789';
 
 /*
-*param company_fax optional (string)
+*param fax optional (string)
 *Fax
 */
-$param['company_fax'] = '123456780';
+$param['fax'] = '123456780';
 
 /*
-*param company_tax_number optional (string)
+*param tax_number optional (string)
 *Tax Number
 */
-$param['company_tax_number'] = 'XX-XXXXX';
+$param['taxNumber'] = 'XX-XXXXX';
 
 /*
-*param company_vat_id optional (string)
+*param vat_id optional (string)
 *VAT ID
 */
-$param['company_vat_id'] = 'DE999999999';
+$param['vatId'] = 'DE999999999';
 
 /*
-*param company_commercial_register optional (string)
+*param commercial_register optional (string)
 *Commercial Register
 */
-$param['company_commercial_register'] = 'Berlin';
+$param['commercialRegister'] = 'Berlin';
 
 /*
-*param company_iban (string)
+*param iban (string)
 *IBAN
 */
-$param['company_iban'] = 'DE89370400440532013000';
+$param['iban'] = 'DE89370400440532013000';
 
 /*
-*param company_bic optional (string)
+*param bic optional (string)
 *BIC
 */
-$param['company_bic'] = 'PBNKDEFF';
+$param['bic'] = 'PBNKDEFF';
 
 /*
-*param company_url optional (string)
+*param url optional (string)
 *URL
 */
-$param['company_url'] = 'http://example.com';
+$param['url'] = 'http://example.com';
 
 /*
 *param
 api_key required (string)
 API key of account
 */
-$param['api_key'] = GETMYINVOICES_ACCOUNTS_API_KEY;
+$api_key = GETMYINVOICES_ACCOUNTS_API_KEY;
 
 $gmi = new RestClient();
 $gmi->setSslverify(false);
-$response = $gmi->addCustomCompany($param);
+$response = $gmi->addCustomCompany($api_key, $param);
 print_r($response);

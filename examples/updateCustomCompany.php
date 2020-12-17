@@ -15,100 +15,100 @@ require_once 'inc/config.php';
 $param = array();
 
 /*
-*param company_id required (integer)
+*param id required (integer)
 *PRIM_UID of the company.
 */
-$param['company_id'] = 732241;
+$companyUid = 29544;
 
 /*
-*param company_name required (string)
+*param name required (string)
 *Name of the company.
 */
-$param['company_name'] = 'GetMyInvoices';
+$param['name'] = 'GetMyInvoices-com';
 
 /*
-*param company_country required (integer)
+*param country required (integer)
 *PRIM_UID of the country.
 */
-$param['company_country'] = 76;
+$param['countryUid'] = 76;
 
 /*
-*param company_tags optional (string)
+*param tags optional (array)
 *Tags (Comma separated tags)
 */
-$param['company_tags'] = 'Hosting, Software, Invoices';
+$param['tags'] = ['Hosting', 'Software', 'Invoices'];
 
 /*
-*param company_street optional (string)
+*param street optional (string)
 *Street
 */
-$param['company_street'] = 'Musterring';
+$param['street'] = 'Musterring';
 
 /*
-*param company_zip (string)
+*param zip (string)
 *ZIP code
 */
-$param['company_zip'] = '12456';
+$param['zip'] = '12456';
 
 /*
-*param company_city optional (string)
+*param city optional (string)
 *City
 */
-$param['company_city'] = 'Musterhausen';
+$param['city'] = 'Musterhausen';
 
 /*
-*param company_email optional (string)
+*param email optional (string)
 *Email
 */
-$param['company_email'] = 'support@getmyinvoices.com';
+$param['email'] = 'support@getmyinvoices.com';
 
 /*
-*param company_phone optional (string)
+*param phone optional (string)
 *Phone
 */
-$param['company_phone'] = '123456789';
+$param['phone'] = '123456789';
 
 /*
-*param company_fax optional (string)
+*param fax optional (string)
 *Fax
 */
-$param['company_fax'] = '123456780';
+$param['fax'] = '123456780';
 
 /*
-*param company_tax_number optional (string)
+*param tax_number optional (string)
 *Tax Number
 */
-$param['company_tax_number'] = 'XX-XXXXX';
+$param['taxNumber'] = 'XX-XXXXX';
 
 /*
-*param company_vat_id optional (string)
+*param vat_id optional (string)
 *VAT ID
 */
-$param['company_vat_id'] = 'DE999999999';
+$param['vatId'] = 'DE999999999';
 
 /*
-*param company_commercial_register optional (string)
+*param commercial_register optional (string)
 *Commercial Register
 */
-$param['company_commercial_register'] = 'Berlin';
+$param['commercialRegister'] = 'Berlin';
 
 /*
-*param company_iban optional (string)
+*param iban optional (string)
 *IBAN
 */
-$param['company_iban'] = 'DE89370400440532013000';
+$param['iban'] = 'DE89370400440532013000';
 
 /*
-*param company_bic optional (string)
+*param bic optional (string)
 *BIC
 */
-$param['company_bic'] = 'PBNKDEFF';
+$param['bic'] = 'PBNKDEFF';
 
 /*
-*param company_url optional (string)
+*param url optional (string)
 *URL
 */
-$param['company_url'] = 'https://www.getmyinvoices.com/';
+$param['url'] = 'https://www.getmyinvoices.com/';
 
 /*
 *param
@@ -116,9 +116,9 @@ api_key required (string)
 API key of account
 */
 
-$param['api_key'] = GETMYINVOICES_ACCOUNTS_API_KEY;
+$api_key = GETMYINVOICES_ACCOUNTS_API_KEY;
 
 $gmi = new RestClient();
 $gmi->setSslverify(false);
-$response = $gmi->updateCustomCompany($param);
+$response = $gmi->updateCustomCompany($api_key, $param, $companyUid);
 echo(json_encode($response));

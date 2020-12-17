@@ -18,16 +18,16 @@ $param = array();
 *param company_id required (integer)
 *PRIM_UID of the company.
 */
-$param['company_id'] = 743129;
+$param['companyUid'] = 29544;
 
 /*
 *param
 api_key required (string)
 API key of account
 */
-$param['api_key'] = GETMYINVOICES_ACCOUNTS_API_KEY;
+$api_key = GETMYINVOICES_ACCOUNTS_API_KEY;
 
 $gmi = new RestClient();
 $gmi->setSslverify(false);
-$response = $gmi->deleteCustomCompany($param);
+$response = $gmi->deleteCustomCompany($api_key, $param);
 print_r($response);

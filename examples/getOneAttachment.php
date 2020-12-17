@@ -7,8 +7,7 @@ require_once '../vendor/autoload.php';
 
 require_once 'inc/config.php';
 
-// Delete a specific attachment.
-
+// Get One attachment for an invoice.
 
 //parameters
 
@@ -35,5 +34,5 @@ $api_key = GETMYINVOICES_ACCOUNTS_API_KEY;
 
 $gmi = new RestClient();
 $gmi->setSslverify(false);
-$response = $gmi->deleteAttachment($api_key, $param);
+$response = $gmi->getOneAttachment($api_key, $param);
 print_r($response);

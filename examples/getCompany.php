@@ -14,19 +14,19 @@ require_once 'inc/config.php';
 $param = array();
 
 /*
-*param  company_id required (integer)
+*param  companyUid required (integer)
 *prim_uid of the company.
 */
-$param['company_id'] = 732241;
+$param['companyUid'] = 29544;
 
 /*
 *param
 api_key required (string)
 API key of account
 */
-$param['api_key'] = GETMYINVOICES_ACCOUNTS_API_KEY;
+$api_key = GETMYINVOICES_ACCOUNTS_API_KEY;
 
 $gmi = new RestClient();
 $gmi->setSslverify(false);
-$response = $gmi->getCompany($param);
+$response = $gmi->getCompany($api_key, $param);
 print_r($response);

@@ -7,24 +7,11 @@ require_once '../vendor/autoload.php';
 
 require_once 'inc/config.php';
 
-// Delete a specific attachment.
-
+// Get list of all available Vat Rates.
 
 //parameters
 
 $param = array();
-
-/*
-*param document_uid required (integer)
-*UID of the Attachment.
-*/
-$param['documentUid'] = 31623;
-
-/*
-*param attachment_uid required (integer)
-*UID of the Attachment.
-*/
-$param['attachmentUid'] = 4;
 
 /*
 *param
@@ -35,5 +22,5 @@ $api_key = GETMYINVOICES_ACCOUNTS_API_KEY;
 
 $gmi = new RestClient();
 $gmi->setSslverify(false);
-$response = $gmi->deleteAttachment($api_key, $param);
+$response = $gmi->getVatRates($api_key, $param);
 print_r($response);

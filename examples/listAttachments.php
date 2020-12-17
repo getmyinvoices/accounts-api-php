@@ -18,16 +18,16 @@ $param = array();
 *param invoice_id required (integer)
 *PRIM_UID of the invoice.
 */
-$param['invoice_id'] = 740040;
+$param['documentUid'] = 31619;
 
 /*
 *param
 api_key required (string)
 API key of account
 */
-$param['api_key'] = GETMYINVOICES_ACCOUNTS_API_KEY;
+$api_key = GETMYINVOICES_ACCOUNTS_API_KEY;
 
 $gmi = new RestClient();
 $gmi->setSslverify(false);
-$response = $gmi->listAttachments($param);
+$response = $gmi->listAttachments($api_key, $param);
 print_r($response);

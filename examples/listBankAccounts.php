@@ -7,33 +7,31 @@ require_once '../vendor/autoload.php';
 
 require_once 'inc/config.php';
 
-// Delete a specific attachment.
-
+// Get list of all bank accounts.
 
 //parameters
 
 $param = array();
 
 /*
-*param document_uid required (integer)
-*UID of the Attachment.
+*param  offset optional (integer)
 */
-$param['documentUid'] = 31623;
+$param['offset'] = 10;
 
 /*
-*param attachment_uid required (integer)
-*UID of the Attachment.
+*param  limit optional (string)
 */
-$param['attachmentUid'] = 4;
 
+$param['limit'] = 20;
 /*
 *param
 api_key required (string)
 API key of account
 */
+
 $api_key = GETMYINVOICES_ACCOUNTS_API_KEY;
 
 $gmi = new RestClient();
 $gmi->setSslverify(false);
-$response = $gmi->deleteAttachment($api_key, $param);
+$response = $gmi->listBankAccounts($api_key, $param);
 print_r($response);

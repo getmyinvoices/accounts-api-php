@@ -7,24 +7,24 @@ require_once '../vendor/autoload.php';
 
 require_once 'inc/config.php';
 
-// Delete a specific attachment.
-
+// Delete one transaction from bank account
 
 //parameters
 
 $param = array();
 
 /*
-*param document_uid required (integer)
-*UID of the Attachment.
+*param bankAccountUid required (integer)
+*ID of BankAccount from /listBankAccounts
 */
-$param['documentUid'] = 31623;
+$param['bankAccountUid'] = 31623;
 
 /*
-*param attachment_uid required (integer)
-*UID of the Attachment.
+*param transactionUid required (integer)
+*ID of Bank Transaction from /ListTransactions
 */
-$param['attachmentUid'] = 4;
+$param['transactionUid'] = 31623;
+
 
 /*
 *param
@@ -35,5 +35,5 @@ $api_key = GETMYINVOICES_ACCOUNTS_API_KEY;
 
 $gmi = new RestClient();
 $gmi->setSslverify(false);
-$response = $gmi->deleteAttachment($api_key, $param);
+$response = $gmi->deleteTransaction($api_key, $param);
 print_r($response);

@@ -12,13 +12,20 @@ require_once 'inc/config.php';
 
 //parameters
 
+/*
+*param invoice_id optional (integer)
+*PRIM_UID of the invoice.
+*/
+$documentUid = 740040;
+
+
 $param = array();
 
 /*
 *param file_name required (string)
 *Name of the file with extension.
 */
-$param['file_name'] = 'sample_pdf_attachment.pdf';
+$param['fileName'] = 'sample_pdf_attachment.pdf';
 
 /*
 *param file_content optional (string)
@@ -26,22 +33,17 @@ $param['file_name'] = 'sample_pdf_attachment.pdf';
 */
 $file=file_get_contents('file/sample_pdf_attachment.pdf');
 
-$param['file_content'] = base64_encode($file);
+$param['fileContent'] = base64_encode($file);
 
-/*
-*param invoice_id optional (integer)
-*PRIM_UID of the invoice.
-*/
-$param['invoice_id'] = 740040;
 
 /*
 *param
 api_key required (string)
 API key of account
 */
-$param['api_key'] = GETMYINVOICES_ACCOUNTS_API_KEY;
+$api_key = GETMYINVOICES_ACCOUNTS_API_KEY;
 
 $gmi = new RestClient();
 $gmi->setSslverify(false);
-$response = $gmi->uploadAttachment($param);
+$response = $gmi->uploadAttachment($api_key, $param, $documentUid);
 print_r($response);

@@ -5,7 +5,7 @@ A PHP SDK for the GetMyInvoices Accounts API
 GetMyInvoices PHP SDK API used to integrate GetMyInvoices REST API into your PHP application. 
 
 ### More examples
-Refer to the [GetMyInvoices API Reference](https://api.getmyinvoices.com/accounts/v2/doc/) for more examples.
+Refer to the [GetMyInvoices API Reference](https://api.getmyinvoices.com/accounts/v3/doc/) for more examples.
 
 ## Reporting issues
 Report any feedback or problems with this version by [opening an issue on Github](http://github.com/getmyinvoices/accounts-api-php/issues).
