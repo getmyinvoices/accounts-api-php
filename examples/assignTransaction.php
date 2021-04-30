@@ -26,7 +26,7 @@ $transactionUid = 31619;
 $param = array();
 
 /*
-*param bookingDate required (integer)
+*param documentUid required (integer)
 *PRIM_UID of the document.
 */
 $param['documentUid'] = 28715;
